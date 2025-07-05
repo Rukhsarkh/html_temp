@@ -19,18 +19,22 @@
       }
 
       .gallery {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 10rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        justify-content: center;
       }
 
       .video-card {
-        display: flex;
-        flex-direction: column;
         background: #fff;
         border-radius: 12px;
         overflow: hidden;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 500px;
+        flex: 1 1 calc(50% - 2rem); /* 2 cards per row */
+        display: flex;
+        flex-direction: column;
       }
 
       .video-wrapper {
@@ -52,13 +56,9 @@
         background-color: #fafafa;
       }
 
-      @media (max-width: 600px) {
-        body {
-          padding: 1rem;
-        }
-
-        .video-title {
-          font-size: 1rem;
+      @media (max-width: 768px) {
+        .video-card {
+          flex: 1 1 100%;
         }
       }
     </style>
@@ -74,7 +74,18 @@
             Your browser does not support the video tag.
           </video>
         </div>
-        <div class="video-title">Resend OTP Verification</div>
+        <div class="video-title">Resend's OTP Verification</div>
+      </div>
+    </div>
+    <div class="gallery">
+      <div class="video-card">
+        <div class="video-wrapper">
+          <video controls preload="metadata">
+            <source src="Sentimental_Analysis.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="video-title">Review Analysis System</div>
       </div>
     </div>
   </body>
